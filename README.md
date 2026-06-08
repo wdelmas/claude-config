@@ -6,10 +6,21 @@ My personal Claude Code configuration, packaged as a **plugin marketplace** so I
 
 ```
 /plugin marketplace add wdelmas/claude-config
-/plugin install will-skills@claude-config
+/plugin install wdelmas-skills@claude-config
 ```
 
-The skills then load as `/will-skills:grill-me` and `/will-skills:grill-with-docs`.
+The skills then load as `/wdelmas-skills:grill-me` and `/wdelmas-skills:grill-with-docs`.
+
+## Update
+
+Pull the latest version onto a machine that already installed the plugin:
+
+```
+/plugin marketplace update claude-config
+/plugin update wdelmas-skills@claude-config
+```
+
+> Updates only land if `version` in `.claude-plugin/plugin.json` was bumped — Claude Code keeps the cached copy when the version matches.
 
 ## Structure
 
@@ -17,7 +28,7 @@ The skills then load as `/will-skills:grill-me` and `/will-skills:grill-with-doc
 claude-config/
 ├── CLAUDE.md                 # maintainer guide: how to add a skill/tool
 ├── .claude-plugin/           # marketplace + plugin manifests
-├── skills/                   # the will-skills plugin's skills
+├── skills/                   # the wdelmas-skills plugin's skills
 ├── tools/                    # one note per tool I use
 ├── claude-md/                # reusable CLAUDE.md templates
 └── README.md

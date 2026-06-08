@@ -5,7 +5,7 @@
   "owner": { "name": "Will", "email": "wi.delmad@gmail.com" },
   "plugins": [
     {
-      "name": "will-skills",
+      "name": "wdelmas-skills",
       "source": ".",
       "description": "Personal skills: grill-me, grill-with-docs"
     }
