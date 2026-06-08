@@ -29,7 +29,7 @@ claude-config/
 |-------|--------------|-----------------|
 | [`grill-me`](skills/grill-me) | Interviews you relentlessly about a plan/design until shared understanding, one question at a time | **Matt Pocock** — [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [`grill-with-docs`](skills/grill-with-docs) | Same grilling, but challenges the plan against your domain docs and updates `CONTEXT.md` / ADRs inline | **Matt Pocock** — [mattpocock/skills](https://github.com/mattpocock/skills) |
-| [`address-pr-comments`](skills/address-pr-comments) | Fetches unresolved PR review comments, fixes them pragmatically, and drafts short French replies + a recap table | Will |
+| [`address-pr-comments`](skills/address-pr-comments) | Fetches unresolved PR review comments, fixes them pragmatically, and drafts short French replies + a recap table | wdelmas |
 
 ## Tools
 
