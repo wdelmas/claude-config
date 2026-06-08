@@ -2,7 +2,7 @@
   "$schema": "https://code.claude.com/schemas/marketplace.json",
   "name": "claude-config",
   "description": "Will's personal Claude Code config: skills + team conventions",
-  "owner": { "name": "Will", "email": "william.delmas@bricks.co" },
+  "owner": { "name": "Will", "email": "wi.delmad@gmail.com" },
   "plugins": [
     {
       "name": "will-skills",
