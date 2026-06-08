@@ -31,12 +31,26 @@ claude-config/
 | [`grill-with-docs`](skills/grill-with-docs) | Same grilling, but challenges the plan against your domain docs and updates `CONTEXT.md` / ADRs inline | **Matt Pocock** — [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [`address-pr-comments`](skills/address-pr-comments) | Fetches unresolved PR review comments, fixes them pragmatically, and drafts short French replies + a recap table | wdelmas |
 | [`pr-description`](skills/pr-description) | Generates a beautiful, dev-friendly PR description in my house style (context-first, decision tables, mermaid, FAQ) in FR or EN, interviews you for the *why*, then offers to apply it via `gh` | wdelmas |
+| [`simplify-pending`](skills/simplify-pending) | Runs the code-simplifier agent on every code file in `git status` — tidy pending changes in one shot | wdelmas |
 
 ## Tools
 
 | Tool | What it is | Why I use it | Credit / Source |
 |------|-----------|--------------|-----------------|
 | [Plannotator](tools/plannotator.md) | Browser UI to annotate plans and review code/markdown | Tightens the plan-review loop — mark up plans and diffs visually instead of a long chat back-and-forth | **backnotprop** — [plannotator.ai](https://plannotator.ai/) · [GitHub](https://github.com/backnotprop/plannotator) |
+
+## Plugins
+
+Claude Code plugins I install from external marketplaces.
+
+| Plugin | What it does | Why I use it | Credit / Source |
+|--------|--------------|--------------|-----------------|
+| [`code-simplifier@claude-plugins-official`](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-simplifier) | Agent that simplifies recently modified code for clarity and maintainability while preserving functionality | Powers my [`simplify-pending`](skills/simplify-pending) skill — tidy pending changes before committing | **Anthropic** — [claude-plugins-official](https://github.com/anthropics/claude-plugins-official) |
+
+```bash
+/plugin marketplace add anthropics/claude-plugins-official
+/plugin install code-simplifier@claude-plugins-official
+```
 
 ## MCP servers
 
