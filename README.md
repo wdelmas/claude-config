@@ -43,6 +43,7 @@ claude-config/
 | [`address-pr-comments`](skills/address-pr-comments) | Fetches unresolved PR review comments, fixes them pragmatically, and drafts short French replies + a recap table | wdelmas |
 | [`pr-description`](skills/pr-description) | Generates a beautiful, dev-friendly PR description in my house style (context-first, decision tables, mermaid, FAQ) in FR or EN, interviews you for the *why*, then offers to apply it via `gh` | wdelmas |
 | [`simplify-pending`](skills/simplify-pending) | Runs the code-simplifier agent on every code file in `git status`, enforcing the [`quality`](skills/quality) conventions — tidy pending changes in one shot | wdelmas |
+| [`shrink-comments`](skills/shrink-comments) | Prunes comments that aren't strictly necessary from your change set (pending / PR / branch vs `develop`) — only comments on changed lines, enforcing the [`quality`](skills/quality) why-only rule | wdelmas |
 | [`rules-hygiene`](skills/rules-hygiene) | Read-only audit of `.cursor/rules/**/*.mdc` for length budget, duplication, and stale claims — returns a `file:line → fix` punch-list, no auto-edits | wdelmas |
 | [`quality`](skills/quality) | Stack-agnostic coding conventions — universal engineering principles (typing, naming, control flow, errors, comments, testing); called by `simplify-pending` | wdelmas |
 
