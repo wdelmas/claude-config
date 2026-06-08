@@ -31,8 +31,9 @@ claude-config/
 | [`grill-with-docs`](skills/grill-with-docs) | Same grilling, but challenges the plan against your domain docs and updates `CONTEXT.md` / ADRs inline | **Matt Pocock** — [mattpocock/skills](https://github.com/mattpocock/skills) |
 | [`address-pr-comments`](skills/address-pr-comments) | Fetches unresolved PR review comments, fixes them pragmatically, and drafts short French replies + a recap table | wdelmas |
 | [`pr-description`](skills/pr-description) | Generates a beautiful, dev-friendly PR description in my house style (context-first, decision tables, mermaid, FAQ) in FR or EN, interviews you for the *why*, then offers to apply it via `gh` | wdelmas |
-| [`simplify-pending`](skills/simplify-pending) | Runs the code-simplifier agent on every code file in `git status` — tidy pending changes in one shot | wdelmas |
+| [`simplify-pending`](skills/simplify-pending) | Runs the code-simplifier agent on every code file in `git status`, enforcing the [`quality`](skills/quality) conventions — tidy pending changes in one shot | wdelmas |
 | [`rules-hygiene`](skills/rules-hygiene) | Read-only audit of `.cursor/rules/**/*.mdc` for length budget, duplication, and stale claims — returns a `file:line → fix` punch-list, no auto-edits | wdelmas |
+| [`quality`](skills/quality) | Stack-agnostic coding conventions — universal engineering principles (typing, naming, control flow, errors, comments, testing); called by `simplify-pending` | wdelmas |
 
 ## Tools
 
