@@ -32,6 +32,7 @@ claude-config/
 | [`address-pr-comments`](skills/address-pr-comments) | Fetches unresolved PR review comments, fixes them pragmatically, and drafts short French replies + a recap table | wdelmas |
 | [`pr-description`](skills/pr-description) | Generates a beautiful, dev-friendly PR description in my house style (context-first, decision tables, mermaid, FAQ) in FR or EN, interviews you for the *why*, then offers to apply it via `gh` | wdelmas |
 | [`simplify-pending`](skills/simplify-pending) | Runs the code-simplifier agent on every code file in `git status` — tidy pending changes in one shot | wdelmas |
+| [`rules-hygiene`](skills/rules-hygiene) | Read-only audit of `.cursor/rules/**/*.mdc` for length budget, duplication, and stale claims — returns a `file:line → fix` punch-list, no auto-edits | wdelmas |
 
 ## Tools
 
