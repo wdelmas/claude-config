@@ -46,6 +46,7 @@ claude-config/
 | [`shrink-comments`](skills/shrink-comments) | Prunes comments that aren't strictly necessary from your change set (pending / PR / branch vs `develop`) — only comments on changed lines, enforcing the [`quality`](skills/quality) why-only rule | wdelmas |
 | [`rules-hygiene`](skills/rules-hygiene) | Read-only audit of `.cursor/rules/**/*.mdc` for length budget, duplication, and stale claims — returns a `file:line → fix` punch-list, no auto-edits | wdelmas |
 | [`quality`](skills/quality) | Stack-agnostic coding conventions — universal engineering principles (typing, naming, control flow, errors, comments, testing); called by `simplify-pending` | wdelmas |
+| [`session-handoff`](skills/session-handoff) | Sums up the current session into a self-contained handoff brief and copies it to the clipboard — paste it into a fresh Claude or ChatGPT session to continue the work | wdelmas |
 
 ## Tools
 
