@@ -2,7 +2,7 @@
 name: pr-description
 description: Generate a beautiful, dev-friendly PR description in Will's house style (context-first, decision tables, mermaid, FAQ collapsibles), in French or English. Use when the user wants to write or rewrite a pull request description.
 allowed-tools: Bash, Read, Grep, Glob, Agent
-argument-hint: "[FR|EN] [PR URL or number]"
+argument-hint: "[FR|EN] [big|small] [PR URL or number]"
 ---
 
 # Generate a PR Description
@@ -19,16 +19,24 @@ this skill assembles from.
 
 `$ARGUMENTS` (optional) may carry, in any order:
 - a **language** — `FR` or `EN` (case-insensitive)
+- a **PR type** — `big` or `small` (synonyms accepted: `doc`/`structural` → big, `known`/`quick` → small)
 - a **PR reference** — a GitHub PR URL (`https://github.com/owner/repo/pull/123`) or a bare number
 
-Parse both out of whatever is given. Either or both may be absent.
+Parse all three out of whatever is given. Any of them may be absent.
 
 ## Instructions
 
-### Step 0: Language
+### Step 0: Language & PR type
 
-Take `FR`/`EN` from `$ARGUMENTS`. If neither is present, **ask the user** which language they want. The
-final description **and every question you ask** must be in that language.
+Take `FR`/`EN` and `big`/`small` from `$ARGUMENTS`. **Ask the user for whichever is missing** (one
+AskUserQuestion batch covering both). The final description **and every question you ask** must be in the
+chosen language.
+
+The **PR type** is about the description's *documentation value*, not the diff size:
+
+- **big** — the PR is documentation for the team: structural/foundational changes, new concepts, anything
+  the team doesn't already know. Structural PRs get the **same full house format** as feature PRs.
+- **small** — routine change the team already knows about; a compact description is enough.
 
 ### Step 1: Locate the change (auto-detect)
 
@@ -60,13 +68,14 @@ not throw it away.
 
 ### Step 3: Draft internally — do NOT show yet
 
-Build the candidate sections from the raw material, and **choose richness by the size/complexity of the
-change** (see the size tiers in `FORMAT.md`):
+Build the candidate sections from the raw material. **The PR type from Step 0 picks the tier** (see the
+size tiers in `FORMAT.md`); the diff's size/complexity only modulates within it:
 
-- **Small** (≈1–5 files, single concern) → title · 🎯 Contexte · what changed (bullets) · ✅ test plan · 🔗 links.
-- **Medium** → add 🏗️ architecture overview · one decision table · reviewer notes.
-- **Large / foundational** → full treatment: mermaid diagram(s), `<details>` vertical-slices + ❓ FAQ,
-  🛣️ phasing table, 🧯 gotchas, ⚠️ action-required, screenshot placeholders.
+- **small** → Small tier: title · 🎯 Contexte · what changed (bullets) · ✅ test plan · 🔗 links.
+- **big** → Medium or Large tier depending on scope: 🏗️ architecture overview · decision table(s) ·
+  reviewer notes, up to the full treatment — mermaid diagram(s), `<details>` vertical-slices + ❓ FAQ,
+  🛣️ phasing table, 🧯 gotchas, ⚠️ action-required, screenshot placeholders. Structural PRs are **not**
+  an excuse to skimp: they get the same format as feature PRs.
 
 Note the gaps the diff **cannot** fill (motivation, decisions, validation) — those drive the next step.
 
@@ -103,12 +112,13 @@ Never apply without an explicit yes.
 
 ## Rules
 
-- **Language**: the whole description and every question are in the chosen language; default to *asking*
-  FR/EN when `$ARGUMENTS` doesn't specify.
+- **Ask for missing arguments**: language and PR type are never guessed — when `$ARGUMENTS` doesn't
+  carry them, ask (one batch). The whole description and every question are in the chosen language.
 - **Context-first, always**: lead with *why* before *what*; surface rejected alternatives wherever a
   non-obvious choice was made.
-- **Adaptive richness**: never force a mermaid diagram or FAQ onto a tiny PR; never under-document a
-  foundational one. Match the tier to the change.
+- **Type drives richness**: `big` (doc-worthy — structural or new to the team) gets the full house
+  format, structural PRs included; `small` (already known by the team) stays compact. Within a tier,
+  never force a mermaid diagram or FAQ where the content doesn't earn it.
 - **Use the GFM features the style relies on**: `> [!NOTE]` / `> [!IMPORTANT]` callouts, `<details>`
   collapsibles, ` ```mermaid ` fences, and tables.
 - **Real code only**: code snippets must be lifted from the actual diff, never invented.
