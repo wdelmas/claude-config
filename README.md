@@ -48,6 +48,7 @@ claude-config/
 | [`quality`](skills/quality) | Stack-agnostic coding conventions — universal engineering principles (typing, naming, control flow, errors, comments, testing); called by `simplify-pending` | wdelmas |
 | [`session-handoff`](skills/session-handoff) | Sums up the current session into a self-contained handoff brief and copies it to the clipboard — paste it into a fresh Claude or ChatGPT session to continue the work | wdelmas |
 | [`meeting-feedback`](skills/meeting-feedback) | Reviews a meeting transcript and delivers brutally honest SBI feedback in French on one participant's performance (default: William) — fixed scorecard, verbatim quotes, action plan; archives transcript + report under `~/Documents/meetings/` to track progress meeting over meeting | wdelmas |
+| [`resume-plan`](skills/resume-plan) | Recovers a plan after a lost/resumed session and re-presents it for approval — re-enters plan mode, restores the plan file, and re-triggers the Plannotator dialog (options 1/2/3) via ExitPlanMode | wdelmas |
 
 ## Tools
 

@@ -1,6 +1,6 @@
 {
   "name": "wdelmas-skills",
   "description": "Personal Claude Code skills for planning, PR workflows, and more",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "author": { "name": "Will", "email": "wi.delmad@gmail.com" }
 }
